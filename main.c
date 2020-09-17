@@ -32,10 +32,9 @@ int main(int argc, char* argv[])
     {
         char* line = strtok_r(input, "\n;", &saveptr1);
 
-        argc = 0;
-
         while (line != NULL)
         {
+            argc = 0;
             char* ptr = strtok_r(line, " ", &saveptr2);
 
             while (ptr != NULL)
@@ -48,7 +47,7 @@ int main(int argc, char* argv[])
                 rc = echo(argc, argv);
 
             if (strcmp(argv[0], "retcode") == 0)
-                rc = retcode(argc, argv);
+                retcode(argc, argv);
 
             line = strtok_r(NULL, "\n;", &saveptr1);
         }
